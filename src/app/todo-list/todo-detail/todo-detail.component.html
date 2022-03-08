@@ -1,0 +1,9 @@
+<div class="todo-container">
+  <nb-checkbox class="todo-finished" [checked]="todo.isDone" (checkedChange)=" toggle()" status="primary">
+  </nb-checkbox>
+  <span class="todo-content" [style.text-decoration]="todo.isDone ? 'line-through' : 'none' ">
+    {{todo.content}}</span>
+  <button class="todo-importent" nbButton ghost status="danger" (click)="changeIcon()">
+    <nb-icon icon="{{startIcon}}"></nb-icon>
+  </button>
+</div>

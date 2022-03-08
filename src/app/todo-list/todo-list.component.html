@@ -1,0 +1,16 @@
+<nb-card [size]="'giant'" [status]="'primary'">
+  <nb-card-header>{{todoGroup.title}}</nb-card-header>
+  <nb-card-body>
+    <nb-list>
+      <nb-list-item *ngFor="let todo of todoList$ | async">
+        <app-todo-detail class="todo-items" [todo]="todo"></app-todo-detail>
+      </nb-list-item>
+    </nb-list>
+  </nb-card-body>
+  <nb-card-footer>
+    <nb-form-field [formGroup]="todoForm">
+      <nb-icon nbPrefix icon="plus-outline" pack="eva"></nb-icon>
+      <input formControlName="todo" (keydown.enter)="addTodo()" type="text" placeholder="Add a task" nbInput>
+    </nb-form-field>
+  </nb-card-footer>
+</nb-card>
